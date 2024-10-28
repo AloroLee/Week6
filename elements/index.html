@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Elements</h1>
+    <script>
+        const fruit = ["apple", "banana", "cherry"];
+       
+        function add(content, index){
+            document.body.innerHTML += index + content + "<br>"
+        }
+
+        add('add', 5555)
+        add("we")
+
+        fruit.forEach(add) //apply add function to each array element1
+
+    </script>
+
+</body>
+</html>
