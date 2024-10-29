@@ -55,3 +55,22 @@ let courses = [
 let classroom1Courses = courses.filter(course => course.Location === "Classroom 1");
 console.log("Classes in Classroom 1:");
 classroom1Courses.forEach(course => console.log(course.Title));
+
+// output of first |> second |> third function CHAINING
+let matches = courses.filter(c => c.Location === "Classroom 1");
+let titles = matches.map(c => c.Title);
+titles.forEach(t => console.log(t));
+
+// compromise
+courses .filter(c => c.Location === "Classroom 1")
+        .map(c => c.Title)
+        .forEach(t => console.log(t));
+
+//further
+function print(text){
+    console.log(text);
+}
+
+courses .filter(c => c.Location === "Classroom 1")
+        .map(c => c.Title)
+        .forEach(print);
