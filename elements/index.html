@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>Elements</h1>
     <script>
-        const fruit = ["apple", "banana", "cherry"];
-       
-        function add(content, index){
-            document.body.innerHTML += index + content + "<br>"
+        
+        const fruit = ["apple", "banana", "cherry"]; //create array
+        
+        function addToPage(content, index){
+            const number = index === undefined ? "" : index + 1; //ternary
+            const prefix = number === "" ? "" : number + " - ";
+            document.body.innerHTML += prefix + content + "<br>"; 
+            // x += ... shorter than  x = x + ...
+        }
+        // addToPage("hello", 123); // manually pass a number as argument 2
+        // addToPage("goodbye", 456); 
+
+        function addListToPage(name, list){
+            addToPage(`<BR>===${name}===`);
+            list.forEach(addToPage);  //passes value, index, array    
         }
 
-        add('add', 5555)
-        add("we")
+        // fruit.forEach(addToPage); //apply add function to each array element
+        // ["bob", "carol", "ted", "alice"].forEach(addToPage);
 
-        fruit.forEach(add) //apply add function to each array element1
+        addListToPage("FRUIT", fruit);
+        addListToPage("PEOPLE", ["bob", "carol", "ted", "alice"]);
+        
+
 
     </script>
-
 </body>
+
 </html>
